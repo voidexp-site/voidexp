@@ -17,7 +17,7 @@ Finality.html
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <link rel="icon" href="/favicon.ico">
     <style>
       body {
@@ -28,7 +28,7 @@ Finality.html
         color: white; /* cambia il colore del testo se serve */
         font-family: "Courier New", monospace; /* font misterioso opzionale */
       }
-    </style>
+    <style>
   </head>
   <body>
   
@@ -89,7 +89,7 @@ post-finality.html
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <link rel="icon" href="/favicon.ico">
     <style>
       body {
@@ -100,7 +100,7 @@ post-finality.html
         color: black; /* cambia il colore del testo se serve */
         font-family: "Courier New", monospace; /* font misterioso opzionale */
       }
-    </style>
+    <style>
   </head>
   <body>
   
@@ -161,7 +161,7 @@ voidexp-finality.html
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <link rel="icon" href="/favicon.ico">
     <style>
       body {
@@ -172,7 +172,7 @@ voidexp-finality.html
         color: Black; /* cambia il colore del testo se serve */
         font-family: "Courier New", monospace; /* font misterioso opzionale */
       }
-    </style>
+    <style>
   </head>
   <body>
   
@@ -210,7 +210,7 @@ credits.html
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <link rel="icon" href="/favicon.ico">
     <style>
       body {
@@ -221,7 +221,7 @@ credits.html
         color: Black; /* cambia il colore del testo se serve */
         font-family: "Courier New", monospace; /* font misterioso opzionale */
       }
-    </style>
+    <style>
   </head>
   <body>
   
@@ -250,7 +250,7 @@ a12b13c14.html
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <link rel="icon" href="/favicon.ico">
     <style>
       body {
@@ -261,7 +261,7 @@ a12b13c14.html
         color: white; /* cambia il colore del testo se serve */
         font-family: "Courier New", monospace; /* font misterioso opzionale */
       }
-    </style>
+    <style>
   </head>
   <body>
   
@@ -322,7 +322,7 @@ a15b16c17.html
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <link rel="icon" href="/favicon.ico">
     <style>
       body {
@@ -333,7 +333,7 @@ a15b16c17.html
         color: white; /* cambia il colore del testo se serve */
         font-family: "Courier New", monospace; /* font misterioso opzionale */
       }
-    </style>
+    <style>
   </head>
   <body>
   

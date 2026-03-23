@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <link rel="icon" href="/favicon.ico">
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+	  <link rel="icon" href="favicon.ico">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
 	  <style>
       body {
 		background-image: url("images/beyond.png"); 
@@ -31,7 +31,7 @@
 		font-size: 12px;
 		width: 600px;
 	  }
-    </style>
+    <style>
   </head>
   <body>
   
@@ -39,7 +39,7 @@
 	<script>
       const isMobile = window.innerWidth <= 768;
       document.head.insertAdjacentHTML('beforeend', `<style>
-        ${isMobile ? ` #countdown {  } ` : ` #countdown {  } `}</style>`);
+        ${isMobile ? ` #countdown {  } ` : ` #countdown {  } `}<style>`);
     </script>
 	<audio id="music" src="soundtracks/the_new_era_has_begun.ogg" autoplay loop></audio>
 	<div class="countdown">

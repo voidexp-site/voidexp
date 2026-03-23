@@ -8,8 +8,8 @@
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="icon" href="/favicon.ico">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="favicon.ico">
     <style>
       body {
         background-image: url("images/skybase.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
@@ -19,7 +19,7 @@
         color: white; /* cambia il colore del testo se serve */
         font-family: "Courier New", monospace; /* font misterioso opzionale */
       }
-    </style>
+    <style>
   </head>
   <body>
   
@@ -27,7 +27,7 @@
     <script>
       const isMobile = window.innerWidth <= 768;
       document.head.insertAdjacentHTML('beforeend', `<style>
-        ${isMobile ? `body { width: 400px; }` : `body { width: 900px; }`}</style>`);
+        ${isMobile ? `body { width: 400px; }` : `body { width: 900px; }`}<style>`);
     </script>
     
     <audio id="music" src="soundtracks/promotion.ogg" autoplay loop></audio>
