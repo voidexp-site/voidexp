@@ -1,9 +1,35 @@
-/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
-   HTML content. To learn how to do something, just try searching Google for questions like
-   "how to change link color." */
+
 
 body {
   background-color: black;
   color: white;
   font-family: verdana;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('fonts/Minecraft.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('fonts/MinecraftBold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('fonts/MinecraftItalic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('fonts/MinecraftBoldItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
 }
