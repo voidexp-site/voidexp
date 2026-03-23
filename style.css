@@ -5,31 +5,3 @@ body {
   color: white;
   font-family: verdana;
 }
-
-@font-face {
-  font-family: 'Void';
-  src: url('fonts/Void.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Void';
-  src: url('fonts/VoidBold.otf') format('opentype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Void';
-  src: url('fonts/VoidItalic.otf') format('opentype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Void';
-  src: url('fonts/VoidBoldItalic.otf') format('opentype');
-  font-weight: bold;
-  font-style: italic;
-}
