@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte - Skybox</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/images/beyond.png"); 
+        background-size: cover;
+        background-position: center; 
+        background-attachment: fixed; 
+        color: white;
+        font-family: "Courier New", monospace;
+      }
+      .text {
+        background: rgba(20,20,20,0.8);
+        border: 2px solid #555;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 360px;
+        margin-bottom: 10px;
+      }
+      
+      #skyboxmap {
+        width: 500px;
+      }
+      
+      #title {
+        color: #ad98fb;
+      }
+      
+      .green {
+        color: #3eff4a;
+      }
+      .red {
+        color: #ff3e3e;
+      }
+      .yellow {
+        color: #e4ff3e;
+      }
+      .orange {
+        color: #ff773e;
+      }
+      .blue {
+        color: #413eff;
+      }
+      .purple {
+        color: #743eff;
+      }
+      
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  </head>
+  <body>
+  
+  <div class="text">
+  
+    <script>
+      const isMobile = window.innerWidth <= 768;
+      document.head.insertAdjacentHTML('beforeend', `<style>
+        ${isMobile ? `.text { width: 360px; }` : `.text { width: 900px; }`}</style>`);
+    </script>
+    <a href="index.html">Torna alla Home</a>
+    
+    <audio id="music" src="https://raw.githubusercontent.com/MakeradamMc/voidexp-resources/main/voidSoundtracks/event00071.ogg" autoplay loop></audio>
+     
+    <div id="title"><h1>Skybox 3D</h1></div> 
+    
+    <p>Trascinate il modello 3D per ruotarlo, cliccate un elemento per esaminarlo</p>
+
+    <div id="cube-container"></div>
+    <script src="scripts/cube3d.js"></script>
+    
+    <p>- Il team di SkyBase, ADMINSPACE, MB delta e DeltaQuest</p>
+    
+    <p> - Adam</p>
+  </div>
+  </body>
+</html>

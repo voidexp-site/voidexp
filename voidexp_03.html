@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/levels/level2.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: white; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+    </style>
+  </head>
+  <body>
+  
+    <a href="index.html">torna alla home</a>
+     
+    <h1>VoidEXP 03</h1> 
+
+    <p>Base16</p>
+    
+    <p>Decifrate il seguente codice</p>
+    
+    <p>------------------------------</p>
+    
+    <p>4164616D206861207261676769756E746F20324B20697363726974746920737520796F7574756265</p>
+    
+    <p>------------------------------</p>
+    
+         <input type="text" id="input" placeholder="Codice">
+  <button onclick="controlla()">Invia</button>
+
+  <p id="risultato"></p>
+
+  <script>
+    function controlla() {
+        const risposta = document.getElementById("input").value.trim();
+        const risultato = document.getElementById("risultato");
+        const rispostaCorretta = "Adam ha raggiunto 2K iscritti su youtube";
+
+        console.log("Risposta inserita:", risposta);
+        console.log("Risposta corretta:", rispostaCorretta);
+        console.log("Uguali?", risposta === rispostaCorretta);
+
+        if (risposta === rispostaCorretta) {
+            risultato.textContent = "Corretto, The end is near...";
+            risultato.style.color = "green";
+        } else {
+            risultato.textContent = "Hmm... qualcosa non quadra...";
+            risultato.style.color = "red";
+        }
+    }
+  </script>
+    
+    <p>- Il team di SkyBase, ADMINSPACE, MB delta e DeltaQuest</p>
+    
+    <p> - Adam</p>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link rel="icon" href="/favicon.ico">
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+	  <style>
+      body {
+		background-image: url("/images/beyond.png"); 
+        background-size: cover;
+        background-position: center; 
+        background-attachment: fixed; 
+        background-color: #333234;
+        color: white;
+        font-family: "Courier New", monospace;
+      }
+	  
+      .red {
+        color: #ff3e3e;
+      }
+	  
+	  .countdown {
+		position: absolute;
+		top: 50%;
+		left: 40%;
+		right: 60%;
+		font-size: 64px;
+	  }
+	  .text {
+		font-size: 12px;
+		width: 600px;
+	  }
+    </style>
+  </head>
+  <body>
+  
+      <!--Vedo che state usando l'ispettore per cercare spiegazioni su questo strano conto alla rovescia... beh, l'unico modo per scoprire per che cos'è è aspettare-->
+	<script>
+      const isMobile = window.innerWidth <= 768;
+      document.head.insertAdjacentHTML('beforeend', `<style>
+        ${isMobile ? ` #countdown {  } ` : ` #countdown {  } `}</style>`);
+    </script>
+	<audio id="music" src="https://raw.githubusercontent.com/MakeradamMc/voidexp-resources/main/voidSoundtracks/the_new_era_has_begun.ogg" autoplay loop></audio>
+	<div class="countdown">
+		<div id="countdown"></div>
+		<p class="text">- Il team di SkyBase, ADMINSPACE, MB delta e DeltaQuest</p>
+		<p class="text">- Adam</p>
+	</div>
+	<script>
+		
+const TARGET = new Date('2026-04-06T10:00:00');
+
+
+const el = document.getElementById('countdown');
+
+function update() {
+  const diff = TARGET - Date.now();
+
+  if (diff <= 0) {
+    el.textContent = '000:00:00';
+    el.classList.add('red');
+    return; 
+  }
+
+  const h = Math.floor(diff / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000)   / 1000);
+
+  el.textContent =
+    String(h).padStart(3, '0') + ':' +
+    String(m).padStart(2, '0') + ':' +
+    String(s).padStart(2, '0');
+
+  setTimeout(update, 1000);
+}
+
+update();
+	</script>
+  </body>
+</html>

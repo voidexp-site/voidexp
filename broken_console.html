@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Broken Console</title>
+    <link rel="icon" href="/favicon.ico">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", monospace;
+            color: white;
+        }
+        
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .background-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .warning {
+            font-size: 18px;
+            color: #c20000;
+            background-color: #ffffff;
+        }
+        
+        .text1 {
+            font-size: 28px;
+            color: #9e0000;
+            transform: translate(10%, -20%);
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .text2 {
+            font-size: 28px;
+            color: #029e00;
+            transform: translate(20%, -20%);
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .text3 {
+            font-size: 28px;
+            color: #9e0000;
+            transform: translate(60%, -40%);
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-area {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;  
+            align-items: center;
+            padding: 20px;
+        }
+
+        .text-box {
+            font-size: 18px;
+            padding: 5px 10px;
+            width: 400px;
+        }
+
+        .send-btn {
+            font-size: 18px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #888888;
+            color: white;
+            margin-top: 5px;
+        }
+        
+        .center-img {
+            width: 150px;     
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        .log-area {
+            margin-top: 10px;
+            width: 500px;
+            max-height: 200px;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .log-area p {
+            margin: 5px 0;
+        }
+    </style>
+
+</head>
+<body>
+<div class="warning">
+   <p>WARNING: This terminal is UNSTABLE, DONT USE IT!</p>
+</div>
+<div class="text1">
+   <p>DO IT</p>
+</div>
+<div class="text2">
+   <p>DONT!</p>
+</div>
+<div class="text3">
+   <p>It beckons, down with devs</p>
+</div>
+
+<audio id="music" src="https://raw.githubusercontent.com/MakeradamMc/voidexp-resources/main/voidSoundtracks/uncontrollable_catastrophe.ogg" autoplay loop></audio>
+
+<div class="container">
+    <img class="background-img" src="images/brokenconsolegui.png" alt="TheInfiniteVoid">
+
+    <div class="input-area">
+       <img src="images/brokenconsole.png" class="center-img" alt="Broken Console">
+       <input type="text" id="userInput" class="text-box" placeholder=",//adminspace.title.Alternative Input logics <____>">
+       <button class="send-btn" onclick="sendText()">Go!</button>
+       <p>WARNING: ERR.console.log</p>
+       <div class="log-area" id="logArea"></div>
+    </div>
+</div>
+
+
+<script src="scripts/bcerror.js"></script>
+
+<script src="scripts/bcmain.js"></script>
+
+</body>
+</html>

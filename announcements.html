@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte - Announcements</title>
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/images/beyond.png"); 
+        background-size: cover;
+        background-position: center; 
+        background-attachment: fixed; 
+        background-color: #111;
+        color: white;
+        font-family: "Courier New", monospace;
+      }
+
+      .text {
+        background: rgba(20,20,20,0.8);
+        border: 2px solid #555;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 700px;
+        margin-bottom: 10px;
+      }
+
+      .area {
+        width: 750px;
+      }
+
+      .item1 {
+        background: rgba(20,20,20,0.8);
+        border: 2px solid #555;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 650px;
+        margin-bottom: 10px;
+      }
+
+      .item-header h3 { margin: 0; padding: 0; display: inline; float: left; }
+
+      .show-more { float: right; cursor: pointer; width: 40px; image-rendering: pixelated; }
+      
+      .small-text { margin: 2px 0 0 0; padding: 0; clear: left; }
+      
+      .description {
+        background: rgba(20,20,20,0.8);
+        border: 2px solid #555;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 625px;
+        margin-top: 6px;
+        margin-bottom: 10px;
+        display: none;
+      }
+      .description p { margin: 0; padding: 0; }
+      .description.active { display: block; }
+
+      
+
+      #title {
+        color: #9b65ff;
+      }
+
+      #title h1 {
+        margin: 5px 0;
+      }
+
+      #logo {
+        width: 600px;
+      }
+      
+      
+      .green {
+        color: #3eff4a;
+      }
+      .red {
+        color: #ff3e3e;
+      }
+      .yellow {
+        color: #e4ff3e;
+      }
+      .orange {
+        color: #ff773e;
+      }
+      .blue {
+        color: #413eff;
+      }
+      .purple {
+        color: #743eff;
+      }
+      
+      .item2 {
+  background: rgba(20,20,20,0.8);
+  border: 2px solid #555;
+  border-radius: 6px;
+  padding: 5px 10px;
+  width: 650px;
+  margin-bottom: 10px;
+}
+
+.vote-buttons {
+  display: inline-flex;
+  gap: 4px;
+  float: right;
+  margin-right: 4px;
+}
+
+.vote-btn {
+  cursor: pointer;
+  width: 40px;
+  image-rendering: pixelated;
+  opacity: 0.5;
+}
+
+.vote-btn.selected {
+  opacity: 1;
+}
+
+.vote-status {
+  margin: 4px 0 0 0;
+  padding: 0;
+  clear: left;
+  font-weight: bold;
+  display: none;
+}
+
+.vote-status.show { display: block; }
+
+    #info-button {
+      width: 32px;
+      cursor: pointer;
+      image-rendering: pixelated;
+    }
+    
+    #info-container {
+        background: rgba(20,20,20,0.8);
+        border: 2px solid #555;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 650px;
+        margin-top: 6px;
+        margin-bottom: 10px;
+        display: none;
+      }
+      
+    #info-container.active {
+       display: flex;
+    }
+    
+    .item1, .item2 {
+  transition: opacity 0.3s;
+}
+
+.item1.hidden, .item2.hidden {
+  display: none;
+}
+
+#show-all {
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: none;
+  color: #11f404;
+}
+
+#show-all.visible {
+  display: inline-block;
+}
+
+    </style>
+  </head>
+  <body>
+
+    <script>
+      const isMobile = window.innerWidth <= 768;
+      document.head.insertAdjacentHTML('beforeend', `<style>
+        ${isMobile ? ` .text { width: 360px; } #logo { width: 350px; } .item1 { width: 350px; } .item2 { width: 350px; } .description { width: 330px; } .info-container { width: 350px; } .area { width: 360px; } #info-container { width: 350px; }` : ` .text { width: 700px; } `}</style>`);
+    </script>
+  <div class="text">
+    <a href="index.html">Torna alla Home</a>
+
+    <audio id="music" src="https://raw.githubusercontent.com/MakeradamMc/voidexp-resources/main/voidSoundtracks/saw_13_returns.ogg" autoplay loop></audio>
+
+    <div id="title"><h1>Notizie, Annunci e Changelogs</h1></div>
+
+    <img id="logo" src="images/voidexplogo.png" alt="VoidEXP logo">
+
+    <p>Se devo fare un annuncio, ho modificato qualcosa o ci sono dei probblemi trovate tutto qua</p><img id="info-button" src="images/news_info.png" alt="Info">
+
+    <div id="info-container">
+      <p>ⓘ Tieni premuto sul pulsante mostra di piu per nascondere una notizia. Come funzionano i voti: Alcune notizie potrebbero richiederi di <i>Approvarle</i> o <i>Rifiutarle</i>, Il voto è privato e nessuno può vederlo, potete utilizzarlo per organizzare meglio questa sezione, i voti vengono salvati anche se chiudi la pagina</p>
+    </div>
+    <p id="show-all">[ Mostra tutto ]</p>
+    <div class="area">
+
+
+      <div class="item1" data-news-id="0003">
+        <div class="item-header">
+          <img class="show-more" src="images/show_more.png" alt="Show More">
+          <h3>Skybox.html</h3><p class="green">[21/3/2026]</p>
+        </div>
+        <p class="small-text green">❑ Nuova pagina creata</p>
+        <div class="description">
+          <p>Creata la pagina Skybox 3D che presenta un modello 3D per osservare la skybox e lo stato delle skybases</p>
+          <a href="skybox.html">[Vai Alla Pagina]</a>
+        </div>
+      </div>
+      
+      <div class="item1" data-news-id="0005">
+        <div class="item-header">
+          <img class="show-more" src="images/show_more.png" alt="Show More">
+          <h3>Varie Pagine</h3><p class="green">[21/3/2026]</p>
+        </div>
+        <p class="small-text orange">❑ Pagina Modificata</p>
+        <div class="description">
+          <p>Modificato l'index e altre pagine (questa inclusa) per un migliore supporto per dispositivi mobili</p>
+          <a href="index.html">[Vai Alla Pagina]</a>
+        </div>
+        
+      </div><div class="item1" data-news-id="0004">
+        <div class="item-header">
+          <img class="show-more" src="images/show_more.png" alt="Show More">
+          <h3>Announcements.html</h3><p class="green">[21/3/2026]</p>
+        </div>
+        <p class="small-text orange">❑ Pagina Modificata</p>
+        <div class="description">
+          <p>Aggiunto un link sotto ogni notizia per arrivare facilmente alla pagina in questione</p>
+          <a href="announcements.html">[Vai Alla Pagina]</a>
+        </div>
+      </div>
+      
+      <div class="item1" data-news-id="0002">
+        <div class="item-header">
+          <img class="show-more" src="images/show_more.png" alt="Show More">
+          <h3>Announcements.html</h3><p class="green">[15/3/2026]</p>
+        </div>
+        <p class="small-text orange">❑ Pagina modificata</p>
+        <div class="description">
+          <p>Aggiunta la feature Approva, Nega a announcements.html; aggiunto il pulsante Info e la feature nascondi</p>
+          <a href="announcements.html">[Vai Alla Pagina]</a>
+        </div>
+      </div>   
+      
+      <div class="item1" data-news-id="0001">
+        <div class="item-header">
+          <img class="show-more" src="images/show_more.png" alt="Show More">
+          <h3>Announcements.html</h3><p class="green">[15/3/2026]</p>
+        </div>
+        <p class="small-text green">❑ Nuova pagina creata</p>
+        <div class="description">
+          <p>Creata la pagina announcements.html per rimpiazzare il changelog dell'index per una GUI piu ordinata e pulita</p>
+          <a href="announcements.html">[Vai Alla Pagina]</a>
+        </div>
+      </div>
+  
+      
+      <!--Changelog base #1
+      
+      <div class="item1" data-news-id="0000">
+        <div class="item-header">
+          <img class="show-more" src="images/show_more.png" alt="Show More">
+          <h3>Titolo</h3><p class="green">[00/0/0000]</p>
+        </div>
+        <p class="small-text green">❑ Sottotitolo</p>
+        <div class="description">
+          <p>Descrizione</p>
+          <a href=".html">[Vai Alla Pagina]</a>
+        </div>
+      </div>
+      
+      -->
+      
+      <!-- Versione di notizia con APPROVE/ DENY, design creato da me
+      
+      <div class="item2" data-news-id="0000">
+        <div class="item-header">
+          <div class="vote-buttons">
+             <img class="vote-btn approve-btn" src="images/approve.png" alt="Approve">
+             <img class="vote-btn deny-btn" src="images/deny.png" alt="Deny">
+             <img class="show-more" src="images/show_more.png" alt="Show More">
+          </div>
+          <h3>Titolo notizia</h3><p class="green">[00/0/0000]</p>
+          </div>
+          <p class="small-text yellow">❑ Sottotitolo</p>
+            <div class="description">
+              <p>Descrizione della notizia...</p>
+            </div>
+            <p class="vote-status"></p>
+        </div>
+        
+        -->
+
+    </div>
+
+    <p>- Il team di SkyBase, ADMINSPACE, MB delta e DeltaQuest</p>
+
+    <p>- Adam</p>
+  </div>
+
+  <script>
+    document.querySelectorAll(".show-more").forEach((btn) => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const description = btn.closest(".item1").querySelector(".description");
+        description.classList.toggle("active");
+        btn.src = description.classList.contains("active")
+          ? "images/show_less.png"
+          : "images/show_more.png";
+      };
+    });
+    
+    document.querySelectorAll(".item2").forEach((item) => {
+      const newsId = item.dataset.newsId;
+      const approveBtn = item.querySelector(".approve-btn");
+      const denyBtn = item.querySelector(".deny-btn");
+      const status = item.querySelector(".vote-status");
+      const description = item.querySelector(".description");
+      const showMore = item.querySelector(".show-more");
+
+      const saved = localStorage.getItem("vote_" + newsId);
+      if (saved) applyVote(saved);
+
+       approveBtn.onclick = (e) => {
+       e.stopPropagation();
+       const current = localStorage.getItem("vote_" + newsId);
+        if (current === "approved") {
+          localStorage.removeItem("vote_" + newsId);
+          applyVote(null);
+        } else {
+          localStorage.setItem("vote_" + newsId, "approved");
+          applyVote("approved");
+        }
+      };
+
+      denyBtn.onclick = (e) => {
+        e.stopPropagation();
+        const current = localStorage.getItem("vote_" + newsId);
+        if (current === "denied") {
+         localStorage.removeItem("vote_" + newsId);
+         applyVote(null);
+        } else {
+          localStorage.setItem("vote_" + newsId, "denied");
+          applyVote("denied");
+        }
+      };
+
+     showMore.onclick = (e) => {
+       e.stopPropagation();
+       description.classList.toggle("active");
+       showMore.src = description.classList.contains("active")
+         ? "images/show_less.png"
+         : "images/show_more.png";
+     };
+
+     function applyVote(vote) {
+       approveBtn.classList.remove("selected");
+       denyBtn.classList.remove("selected");
+       status.classList.remove("show", "green", "red");
+       if (vote === "approved") {
+         approveBtn.classList.add("selected");
+         status.textContent = "✔ Approvata";
+         status.classList.add("show", "green");
+       } else if (vote === "denied") {
+         denyBtn.classList.add("selected");
+          status.textContent = "✘ Rifiutata";
+          status.classList.add("show", "red");
+        } else {
+          status.textContent = "";
+        }
+      }
+    });
+    
+    
+    const infoButton = document.getElementById("info-button");
+    const infoContainer = document.getElementById("info-container");
+
+
+    infoButton.onclick = (e) => {
+      e.stopPropagation();
+      infoContainer.classList.toggle("active");
+    };
+
+
+    document.addEventListener("click", (e) => {
+      if (!infoContainer.contains(e.target) && e.target !== infoButton) {
+        infoContainer.classList.remove("active");
+      }
+    });
+    
+    function setupHide(item) {
+      const showMore = item.querySelector(".show-more");
+      const itemId = item.dataset.newsId || item.querySelector("h3").textContent;
+
+      // Carica stato nascosto
+        if (localStorage.getItem("hidden_" + itemId) === "true") {
+          item.classList.add("hidden");
+        showAllBtn.classList.add("visible");
+      }
+
+    showMore.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+          item.classList.add("hidden");
+        localStorage.setItem("hidden_" + itemId, "true");
+        showAllBtn.classList.add("visible");
+   });
+    }
+
+      const showAllBtn = document.getElementById("show-all");
+
+        document.querySelectorAll(".item1, .item2").forEach(setupHide);
+
+        showAllBtn.onclick = () => {
+          document.querySelectorAll(".item1, .item2").forEach((item) => {
+          item.classList.remove("hidden");
+          const itemId = item.dataset.newsId || item.querySelector("h3").textContent;
+          localStorage.removeItem("hidden_" + itemId);
+        });
+          showAllBtn.classList.remove("visible");
+        };
+  </script>
+  </body>
+</html>

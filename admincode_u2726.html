@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>AdminCode</title>
+    <link rel="icon" href="/favicon.ico">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", monospace;
+            color: white;
+        }
+        
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            color: black;
+        }
+
+        .background-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .input-area {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;  
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .yes {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;  
+            align-items: center;
+            padding: 20px;
+        }
+
+        .text-box {
+            font-size: 18px;
+            padding: 5px 10px;
+            width: 400px;
+            color: #6a6a6a;
+        }
+
+        .send-btn {
+            font-size: 18px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #888888;
+            color: white;
+            margin-top: 5px;
+        }
+        
+        .center-img {
+            width: 150px;     
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        .gui-img {
+            margin-top: 10px;
+            width: 500px;
+            height: 500px;
+        }
+        
+        .log-area {
+            margin-top: 10px;
+            width: 500px;
+            max-height: 200px;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .log-area p {
+            margin: 5px 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<audio id="music" src="https://raw.githubusercontent.com/MakeradamMc/voidexp-resources/main/voidSoundtracks/calm6.ogg" autoplay loop></audio>
+
+<div class="container">
+    <img class="background-img" src="/images/adminspaceguiyesno.png" alt="TheInfiniteVoid">
+    <div class="input-area">
+       <a>Affirm?</a>
+       <p>Scrivi "Yes" o "No" Per affermare</p>
+       <input type="text" id="input" placeholder="">
+       <button onclick="controlla()">Invia</button>
+       <p id="risultato"></p>
+    </div>
+</div>
+
+
+<script>
+    function controlla() {
+        const risposta = document.getElementById("input").value.trim();
+        const risultato = document.getElementById("risultato");
+        const rispostaCorretta = "Yes";
+
+        console.log("Risposta inserita:", risposta);
+        console.log("Risposta corretta:", rispostaCorretta);
+        console.log("Uguali?", risposta === rispostaCorretta);
+
+        if (risposta === rispostaCorretta) {
+            risultato.innerHTML = `<a href="https://www.mediafire.com/file/r18bx3kzeyjczjc/AdminCodeU2726.png/file"><img src="/images/book_writable.png" alt="Confirm"width="256"></a>
+            <p>Admin Code confermato, clicca l'immagine per scaricare il documento</p>`;
+            risultato.style.color = "blue";
+        } else {
+            risultato.textContent = "Admin Code non confermato";
+            risultato.style.color = "red";
+        }
+    }
+  </script>
+
+<script>
+let soundPlayed = false;
+
+function tryPlaySound() {
+    if (!soundPlayed) {
+        const audio = document.getElementById("startup");
+        audio.play().catch(() => {});
+        soundPlayed = true;
+    }
+}
+
+document.addEventListener("click", tryPlaySound);
+document.addEventListener("keydown", tryPlaySound);
+</script>
+
+</body>
+</html>

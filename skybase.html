@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/images/skybase.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: white; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+    </style>
+  </head>
+  <body>
+  
+    <a href="index.html">torna alla home</a>
+    <script>
+      const isMobile = window.innerWidth <= 768;
+      document.head.insertAdjacentHTML('beforeend', `<style>
+        ${isMobile ? `body { width: 400px; }` : `body { width: 900px; }`}</style>`);
+    </script>
+    
+    <audio id="music" src="https://raw.githubusercontent.com/MakeradamMc/voidexp-resources/main/voidSoundtracks/promotion.ogg" autoplay loop></audio>
+     
+    <p>VoidEXP Terminals</p>
+    <img src="/images/voidexplogo.png" alt="VoidEXP logo" width=360px>
+    <p>Da questa pagina puoi accedere ai terminali di Skybase</p>
+    <p>Ma alcuni di essi richiedono permessi adeguati</p>
+    <img src="/images/grlayer.png" alt="Noise Gem tile">
+
+     <p>--------------------------</p>
+     <p>Console Terminal</p>
+     <a href="console.html"><img src="/images/consolelogo.png" alt="ConsoleLogo" width="64"></a>
+     
+     <p>--------------------------</p>
+     <p>ADMINSPACE Console</p>
+     <a href="adminspacelogin.html?id=adminspaceconsole"><img src="/images/adminspaceconsolelogo.png" alt="ADMINSPACEConsoleLogo" width="64"></a>
+     
+     <p>--------------------------</p>
+     <p>The Void Bridge Console</p>
+     <a href="adminspacelogin.html?id=tvbconsole"><img src="/images/tvbconsole.gif" alt="The Void Bridge console" width="64"></a>
+     
+     <p>--------------------------</p>
+     <p>Broken Console</p>
+     <a href="broken_console.html"><img src="/images/brokenconsolelogo.png" alt="BrokenConsoleLogo" width="64"></a>
+     <p>--------------------------</p>
+     
+    <p>Alcuni terminali sono sotto manutenzione</p>
+    <p>Questa pagina è molto importante, nuovi comandi verranno aggiunti in seguito</p>
+    
+    <p>- Il team di SkyBase, ADMINSPACE, MB delta e DeltaQuest</p>
+    
+    <p> - Adam</p>
+  </body>
+</html>

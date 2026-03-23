@@ -1,0 +1,358 @@
+------------------------------------------------------------------------------------------------
+Allora, non ho la piu pallida idea di come fate a leggere questo,
+se vi interessa ho semplicemente archiviato delle pagina non usate per liberare un po di memoria
+------------------------------------------------------------------------------------------------
+
+
+
+Finality.html
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/levels/adminlevel.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: white; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+    </style>
+  </head>
+  <body>
+  
+    <a href="index.html">torna alla home</a>
+     
+    <h1>⍃Finality⍄</h1>
+
+    <p>Congratulazioni, siete arrivati fino a qua...</p>
+    <p>La verità è ad un passo da voi</p>
+    <p>Ma non pensiate che vi sarà facile trovarla...</p>
+    
+    <p>---------------------------</p>
+    
+    <p>inserite un ADMIN code, dopo ciò cliccate l'immagine</p>
+    
+           <input type="text" id="input" placeholder=">>>ADMIN code<<<">
+  <button onclick="controlla()">Invia</button>
+
+  <p id="risultato"></p>
+
+  <script>
+    function controlla() {
+        const risposta = document.getElementById("input").value.trim();
+        const risultato = document.getElementById("risultato");
+        const rispostaCorretta = "1756439802";
+
+        console.log("Risposta inserita:", risposta);
+        console.log("Risposta corretta:", rispostaCorretta);
+        console.log("Uguali?", risposta === rispostaCorretta);
+
+        if (risposta === rispostaCorretta) {
+            //risultato.innerHTML = '<a href="post-finality.html"><img src="/images/finality.png" alt="Finality"width="300"></a>';
+            //risultato.style.color = "blue";
+            risultato.textContent = "Non puoi accedere a finality al momento";
+            risultato.style.color = "red";
+        } else {
+            risultato.textContent = "Admin Code errato";
+            risultato.style.color = "red";
+        }
+    }
+  </script>
+    
+    <p>- Il team di SkyBase, ADMINSPACE, MB delta e DeltaQuest</p>
+    
+    <p> - Adam</p>
+  </body>
+</html>
+
+post-finality.html
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/levels/finalitylevel.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: black; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+    </style>
+  </head>
+  <body>
+  
+    <a href="index.html">torna alla home</a>
+     
+    <h1>▚⍃Finality⍄▞</h1>
+    
+    <p><i>"è difficile riconoscere un codice solo guardandolo... solo tentando lo si può risolvere"</i></p>
+
+    <p>Qui sotto troverai l'enigma finale, Non siete autorizzati a condividere il seguente codice</p>
+    
+    <p>----------------------------</p>
+    
+    <p>[Non siete autorizzati a decifrare finality]</p>
+    
+    <p>----------------------------</p>
+    
+    <p>Ora inserite la rispsta qua:</p>
+    
+       <input type="text" id="input" placeholder="Finality">
+  <button onclick="controlla()">Invia</button>
+
+  <p id="risultato"></p>
+
+  <script>
+    function controlla() {
+        const risposta = document.getElementById("input").value.trim();
+        const risultato = document.getElementById("risultato");
+        const rispostaCorretta = "[[Nulla]]";
+
+        console.log("Risposta inserita:", risposta);
+        console.log("Risposta corretta:", rispostaCorretta);
+        console.log("Uguali?", risposta === rispostaCorretta);
+
+        if (risposta === rispostaCorretta) {
+            risultato.innerHTML = 'Finalized: <a href="voidexp-finality.html">[Ultima pagina:]</a>';
+            risultato.style.color = "blue";
+        } else {
+            risultato.textContent = "Questo non è finality.";
+            risultato.style.color = "red";
+        }
+    }
+  </script>
+    
+    <p> - Adam</p>
+  </body>
+</html>
+
+voidexp-finality.html
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/levels/endfinalitylevel.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: Black; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+    </style>
+  </head>
+  <body>
+  
+    <a href="post-finality.html">torna a Post-finality</a>
+     
+    <h1>⊏FINALITY⊐</h1>
+
+    <p>Tu hai completato VoidEXP e hai avuto accesso a Finality</p>
+    <p>Il seguente codice conferma che tu sei arrivata fino a qua</p>
+    <img src="/images/grlayer.png" alt="VoidEXP">
+    <p>-------------------------</p>
+    <p>a215dvd63rh8sf5w6215ev65dw3k</p>
+    <p>-------------------------</p>
+    <img src="/images/grlayer.png" alt="VoidEXP">
+    <p>E con questo Finality si conclude, ma non VoidEXP</p>
+    <p>Congratulazioni ad essere stata la prima a raggiungere la fine di VoidEXP</p>
+    
+    <p>Vuoi sapere come questo sito è stato possibile? clicca <a href="credits.html">Qua</a></p>
+    
+    <p></p>
+    
+    <p> - Adam</p>
+  </body>
+</html>
+
+credits.html
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/levels/endfinalitylevel.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: Black; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+    </style>
+  </head>
+  <body>
+  
+    <a href="voidexp-finality.html">torna a voidexp-finality</a>
+     
+    <h1>Titoli di coda</h1>
+
+    <p>se te o chiedi, si adam ha fatto tutto questo</p>
+    <p>Questo è letteralmente cosa vede dalla sua parte</p>
+    <img src="/images/neocities.png" alt="Screenshot_from_Terminal_25B">
+    <p>Esatto, nessuno lo ha aiutato, ne i suoi genitori ne nessuno, solo lui è una pagina di wiki sul codice HTML</p>
+    
+    <p> - Adam</p>
+  </body>
+</html>
+
+a12b13c14.html
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/levels/level3.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: white; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+    </style>
+  </head>
+  <body>
+  
+    <a href="post-finality.html">torna a finality</a>
+     
+    <h1>Finality 1/2</h1> 
+    
+    <p>The end is near</p>
+    
+    <p>Trova il codice a 8 cifre</p>
+    
+    <p>------------------------------</p>
+    
+    <p><a href="">[[[[[[[[[link]]]]]]]]]</a></p>
+    
+    <p>------------------------------</p>
+    
+         <input type="text" id="input" placeholder="Codice a 8 cifre">
+  <button onclick="controlla()">Invia</button>
+
+  <p id="risultato"></p>
+
+  <script>
+    function controlla() {
+        const risposta = document.getElementById("input").value.trim();
+        const risultato = document.getElementById("risultato");
+        const rispostaCorretta = "34789213";
+
+        console.log("Risposta inserita:", risposta);
+        console.log("Risposta corretta:", rispostaCorretta);
+        console.log("Uguali?", risposta === rispostaCorretta);
+
+        if (risposta === rispostaCorretta) {
+            risultato.innerHTML = '<img src="/images/qrcodefinality.png" alt="A beginning to an end...">';
+            risultato.style.color = "green";
+        } else {
+            risultato.textContent = "ERROR: not correct code.//";
+            risultato.style.color = "red";
+        }
+    }
+  </script>
+    
+    <p>- Il team di SkyBase, ADMINSPACE, MB delta e DeltaQuest</p>
+    
+    <p> - Adam</p>
+  </body>
+</html>
+
+a15b16c17.html
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/levels/level4.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: white; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+    </style>
+  </head>
+  <body>
+  
+    <a href="post-finality.html">torna a Finality</a>
+     
+    <h1>Finality 2/2</h1> 
+    
+    <p>The end is nigh</p>
+    <p>The end is null</p>
+    <p>The end is below</p>
+    
+    <p>------------------------------</p>
+    
+    <p>[Non siete autorizzati a decifrare finality]</p>
+    
+    <p>------------------------------</p>
+    
+    <p>- Il team di SkyBase, ADMINSPACE, MB delta e DeltaQuest</p>
+    
+    <p> - Adam</p>
+  </body>
+</html>

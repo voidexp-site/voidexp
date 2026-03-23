@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/images/background.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: white; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+    </style>
+  </head>
+  <body>
+  
+    <a href="index.html">torna alla home</a>
+     
+    <h1>Congratulazioni</h1>
+
+    <p>Avete completato il tutorial, ecco le soluzioni dei codici precedenti</p>
+    
+<button onclick="mostraIndizio()">Codice 1</button>
+
+<div id="indizio1" style="display:none; margin-top:10px; background:#222; color:#eee; padding:10px; border-radius:5px;">
+   Codice binario che si traduce in: No, non sono fidanzato, smettetela di chiedermelo
+</div>
+
+<button onclick="mostraIndizio2()">Codice 2</button>
+
+<div id="indizio2" style="display:none; margin-top:10px; background:#222; color:#eee; padding:10px; border-radius:5px;">
+   Codice hexadecimale che si traduce in: Questa era facile
+</div>
+
+<button onclick="mostraIndizio3()">Codice 3</button>
+
+<div id="indizio3" style="display:none; margin-top:10px; background:#222; color:#eee; padding:10px; border-radius:5px;">
+   Codice morse che si traduce in: NON SIAMO CIECHI MA IL CODICE MORSE LO RICONOSCIAMO
+</div>
+
+<button onclick="mostraIndizio4()">Codice 4</button>
+
+<div id="indizio4" style="display:none; margin-top:10px; background:#222; color:#eee; padding:10px; border-radius:5px;">
+   Codice binario che si traduce in hexadecimale e infine in: A adam piacciono i gatti
+</div>
+    
+<script>
+  function mostraIndizio() {
+    const indizio = document.getElementById('indizio1');
+    if (indizio.style.display === 'none') {
+      indizio.style.display = 'block';
+    } else {
+      indizio.style.display = 'none';
+    }
+  }
+</script>
+
+<script>
+  function mostraIndizio2() {
+    const indizio = document.getElementById('indizio2');
+    if (indizio.style.display === 'none') {
+      indizio.style.display = 'block';
+    } else {
+      indizio.style.display = 'none';
+    }
+  }
+</script>
+
+<script>
+  function mostraIndizio3() {
+    const indizio = document.getElementById('indizio3');
+    if (indizio.style.display === 'none') {
+      indizio.style.display = 'block';
+    } else {
+      indizio.style.display = 'none';
+    }
+  }
+</script>
+
+<script>
+  function mostraIndizio4() {
+    const indizio = document.getElementById('indizio4');
+    if (indizio.style.display === 'none') {
+      indizio.style.display = 'block';
+    } else {
+      indizio.style.display = 'none';
+    }
+  }
+</script>
+
+<p>Da ora si fa su serio, Solo chi sarà degno potra andare avanti</p>
+   </body>
+</html>

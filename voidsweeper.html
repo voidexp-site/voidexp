@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte - VoidSweeper</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+    
+      body {
+        background-image: url("/images/void.png"); 
+        color: white;
+        font-family: monospace;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* VOID THEME (default) */
+        --tile-hidden: url("textures/tile.png");
+        --tile-empty: url("textures/empty.png");
+        --tile-mine: url("textures/mine.png");
+        --tile-flag: url("textures/flag.png");
+        --tile-question: url("textures/unknown.png");
+        --tile-wrong: url("textures/mine_cancelled.png");
+        --tile-exploded: url("textures/mine_critical.png");
+
+        --n1: url("textures/1.png");
+        --n2: url("textures/2.png");
+        --n3: url("textures/3.png");
+        --n4: url("textures/4.png");
+        --n5: url("textures/5.png");
+        --n6: url("textures/6.png");
+        --n7: url("textures/7.png");
+        --n8: url("textures/8.png");
+        }
+        
+        body.classic {
+      --tile-hidden: url("classic/tile.png");
+      --tile-empty: url("classic/empty.png");
+      --tile-mine: url("classic/mine.png");
+      --tile-flag: url("classic/flag.png");
+      --tile-question: url("classic/unknown.png");
+      --tile-wrong: url("classic/mine_cancelled.png");
+      --tile-exploded: url("classic/mine_critical.png");
+
+      --n1: url("classic/1.png");
+      --n2: url("classic/2.png");
+      --n3: url("classic/3.png");
+      --n4: url("classic/4.png");
+      --n5: url("classic/5.png");
+      --n6: url("classic/6.png");
+      --n7: url("classic/7.png");
+      --n8: url("classic/8.png");
+      }
+
+     #ui {
+       margin: 10px;
+       display: flex;
+       gap: 20px;
+       align-items: center;
+        }
+
+    #grid {
+       display: grid;
+       grid-template-columns: repeat(9, 16px);
+       image-rendering: pixelated; /* IMPORTANTISSIMO */
+        }
+    
+    /* CONTENITORE UI (faccina + flag + timer) */
+#ui-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* timer a sinistra, flag a destra */
+    background: rgba(20,20,20,0.8);
+    border: 2px solid #555;
+    border-radius: 6px;
+    padding: 5px 10px;
+    width: 220px; /* adatta a tua UI */
+    margin-bottom: 10px;
+}
+
+/* Timer e mine count */
+#mineCount, #timer {
+    font-family: monospace;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Spaziatura faccina / flag */
+#face {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    image-rendering: pixelated;
+}
+
+#flagToggle {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    image-rendering: pixelated;
+}
+
+/* Contenitore griglia */
+#grid-container {
+    padding: 10px;
+    background: rgba(10,10,10,0.6);
+    border: 2px solid #555;
+    border-radius: 6px;
+}
+
+#menu-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+}
+
+#menu-button {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    image-rendering: pixelated;
+}
+
+/* Dropdown nascosto di default */
+#menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    background: rgba(20,20,20,0.9);
+    border: 2px solid #555;
+    border-radius: 6px;
+    padding: 10px;
+    width: 180px;
+}
+
+/* Dropdown visibile quando attivo */
+#menu-container.active #menu-dropdown {
+    display: block;
+}
+
+.menu-item {
+    margin-bottom: 8px;
+    color: white;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.menu-item input[type="number"] {
+    width: 50px;
+    margin-right: 5px;
+}
+
+.menu-item button {
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 3px;
+}
+.cell {
+    width: 16px;
+    height: 16px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+      .cell.hidden { background-image: var(--tile-hidden); }
+      .cell.revealed { background-image: var(--tile-empty); }
+      .cell.mine { background-image: var(--tile-mine); }
+      .cell.flag { background-image: var(--tile-flag); }
+      .cell.question { background-image: var(--tile-question); }
+      .cell.wrong-flag { background-image: var(--tile-wrong); }
+      .cell.exploded { background-image: var(--tile-exploded); }
+
+      .cell.n1 { background-image: var(--n1); }
+      .cell.n2 { background-image: var(--n2); }
+      .cell.n3 { background-image: var(--n3); }
+      .cell.n4 { background-image: var(--n4); }
+      .cell.n5 { background-image: var(--n5); }
+      .cell.n6 { background-image: var(--n6); }
+      .cell.n7 { background-image: var(--n7); }
+      .cell.n8 { background-image: var(--n8); }
+    </style>
+  </head>
+  <body>
+  
+   <audio id="music" src="https://raw.githubusercontent.com/MakeradamMc/voidexp-resources/main/voidSoundtracks/x.ogg" autoplay loop></audio>
+  
+   <div id="ui-container">
+       <img id="face" src="textures/face_idle.png" alt="face">
+       <span id="mineCount">Mines: 0</span>
+       <span id="timer">Time: 0</span>
+       <img id="flagToggle" src="textures/flag_off.png" alt="flag">
+    </div>
+
+    <div id="grid-container">
+       <div id="grid"></div>
+    </div>
+    
+    
+<div id="menu-container">
+    
+    <img id="menu-button" src="textures/menu.png" alt="menu">
+
+  
+    <div id="menu-dropdown">
+    
+        <div class="menu-item">
+        <a href="index.html" class="menu-link">Torna alla home
+        </a>
+        </div>
+        
+        <div class="menu-item">
+            <img src="textures/unknown.png" alt="?">
+            <label>
+                <input type="checkbox" id="helpToggle"> Punti interrogativi
+            </label>
+        </div>
+        <div class="menu-item">
+            <label>
+              <input type="checkbox" id="classicTextures">Texture classiche
+            </label>
+        </div>
+
+       
+        <div class="menu-item">
+            <label>Difficoltà:</label>
+            <button class="difficulty-btn" data-diff="beginner">Beginner</button>
+            <button class="difficulty-btn" data-diff="intermediate">Intermediate</button>
+            <button class="difficulty-btn" data-diff="expert">Expert</button>
+        </div>
+
+       
+        <div class="menu-item">
+            <label>Custom:</label>
+            <input type="number" id="custom-size" placeholder="Griglia" min="5" max="30">
+            <input type="number" id="custom-mines" placeholder="Mine" min="1">
+            <button id="applyCustom">Applica</button>
+        </div>
+        <div class="menu-item">
+        <a href="vs_htp.html" class="menu-link">Come Giocare
+        </a>
+        </div>
+
+        </div>
+</div>
+    
+    <script src="scripts/voidSweeper.js"></script>
+
+  </body>
+</html>

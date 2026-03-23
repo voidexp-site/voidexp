@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>The Void Bridge Terminal</title>
+    <link rel="icon" href="/favicon.ico">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", monospace; 
+            color: white;
+            background-color: black;
+        }
+        
+        .container {
+            top: 10%
+            right: 50%;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .background-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #input-area {
+           display: none;
+        }
+        #input-area.active {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;  
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .console-full {
+            position: relative;
+            bottom: 40%;
+        }
+        
+        .console1 {
+            
+            position: absolute;
+            bottom: 0px;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;  
+            align-items: center;
+            padding: 20px;
+        }
+        .console2 {
+            position: absolute;
+            bottom: 75px;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;  
+            align-items: center;
+            padding: 20px;
+        }
+
+        .text-box {
+            font-size: 18px;
+            padding: 5px 10px;
+            width: 400px;
+            color: #6a6a6a;
+        }
+        
+        .warning {
+            font-size: 18px;
+            color: #c20000;
+            background-color: #ffffff;
+        } 
+        .admin-id {
+            font-size: 18px;
+            color: green;
+            background-color: #ffffff;
+        } 
+
+        .send-btn {
+            font-size: 18px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #8200ff;
+            color: white;
+            margin-top: 5px;
+        }
+        
+        #server {
+          cursor: pointer;
+            position: relative;
+            width: 150px;     
+            height: 150px;
+            image-rendering: pixelated;
+            
+        }
+        
+        #console {
+          cursor: pointer;
+            position: relative;
+            width: 150px;     
+            height: 150px;
+            image-rendering: pixelated;
+            
+        }
+        
+        #radar {
+          cursor: pointer;
+            position: relative;
+            width: 151px;     
+            height: 151px;
+            image-rendering: pixelated;
+            
+        }
+        
+        #power-supply {
+          cursor: pointer;
+            position: relative;
+            width: 150px;     
+            height: 150px;
+            image-rendering: pixelated;
+            
+        }
+        
+        #cooling-unit {
+          cursor: pointer;
+            position: relative;
+            width: 150px;     
+            height: 150px;
+            image-rendering: pixelated;
+            
+        }
+        
+        .gui-img {
+            margin-top: 10px;
+            width: 500px;
+            height: 500px;
+        }
+        
+        .log-area {
+            margin-top: 10px;
+            width: 500px;
+            max-height: 200px;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .log-area p {
+            margin: 5px 0;
+        }
+    </style>
+
+</head>
+<body>
+  <p>ATTENZIONE: Console ancora in sviluppo</p>
+
+<audio id="music" src="https://raw.githubusercontent.com/MakeradamMc/voidexp-resources/main/voidSoundtracks/inverse_tesseract.ogg" autoplay loop></audio>
+
+<div class="container">
+    <img class="background-img" src="images/tvb.png" alt="The Void Bridge">
+    
+    <div class="console-full">
+    <div class="console1">
+       <img src="images/tvbconsole5.gif" id="radar" alt="TVBradar">
+       <img src="images/tvbconsole1.png" id="console" alt="TVBconsole">
+       <img src="images/tvbconsole2.png" id="server" alt="TVBserver">
+    </div>
+
+    <div class="console2">
+       <img src="images/tvbconsole3.gif" id="cooling-unit" alt="TVBcoolingUnit">
+       <img src="images/tvbconsole4.png" id="power-supply" alt="TVBpowerSupply">
+    </div>
+    <div id="input-area">
+       <input type="text" id="userInput" class="text-box" placeholder="Execute command">
+       <button class="send-btn" onclick="sendText()">Execute</button>
+       <p>Output:</p>
+       <div class="log-area" id="logArea"></div>
+    </div>
+    </div>
+</div>
+
+
+<script src="scripts/tvbconsolehandler.js"></script>
+
+<script src="scripts/tvbconsolemain.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/images/background.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: white; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+    </style>
+  </head>
+  <body>
+  
+    <a href="index.html">torna alla home</a>
+     
+    <h1>Si procede:</h1>
+
+    <p>siete riusciti a risolvere l'enigma precedente?</p>
+    
+    <p>se si, inserite la risposta qua:</p>
+    
+    <input type="text" id="input" placeholder="Scrivi la tua risposta">
+  <button onclick="controlla()">Invia</button>
+
+  <p id="risultato"></p>
+
+  <script>
+    function controlla() {
+        const risposta = document.getElementById("input").value.trim();
+        const risultato = document.getElementById("risultato");
+        const rispostaCorretta = "No, non sono fidanzato, smettetela di chiedermelo";
+
+        console.log("Risposta inserita:", risposta);
+        console.log("Risposta corretta:", rispostaCorretta);
+        console.log("Uguali?", risposta === rispostaCorretta);
+
+        if (risposta === rispostaCorretta) {
+            risultato.textContent = "✅ Corretto.  A quanto pare vi ho sottovalutati, congratulazioni";
+            risultato.style.color = "lightgreen";
+        } else {
+            risultato.textContent = "❌ qualcosa qui non quadra...";
+            risultato.style.color = "red";
+        }
+    }
+  </script>
+
+<button onclick="mostraIndizio()">Mostra Indizio</button>
+
+<div id="indizio" style="display:none; margin-top:10px; background:#222; color:#eee; padding:10px; border-radius:5px;">
+  Quel codice e formato da 1 e 0, è la cosa su cui viaggia il treno
+</div>
+
+<script>
+  function mostraIndizio() {
+    const indizio = document.getElementById('indizio');
+    if (indizio.style.display === 'none') {
+      indizio.style.display = 'block';
+    } else {
+      indizio.style.display = 'none';
+    }
+  }
+</script>
+
+</body>
+</html>
+    
+    <p>Prossimo codice, sarete in grado di risolvere questo?</p>
+    
+    <p>---------------------------------------------------</p>
+    
+    <p>51 75 65 73 74 61 20 65 72 61 20 66 61 63 69 6c 65</p>
+    
+    <p>---------------------------------------------------</p>
+    
+    <p>- Il team di SkyBase, ADMINSPACE, MB delta e DeltaQuest</p>
+    
+    <p> - Adam</p>
+  </body>
+</html>

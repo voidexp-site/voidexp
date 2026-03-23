@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/images/tvb.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: white; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+       #menu-button {
+       position: fixed;
+       top: 10px;
+       right: 10px;
+       width: 32px;
+       height: 32px;
+       cursor: pointer;
+       z-index: 100;
+       }
+       
+       #changelog-button {
+          position: fixed;
+          bottom: 20px;
+          right: 10px;
+          width: 32px;
+          height: 32px;
+          cursor: pointer;
+          z-index: 100;
+          image-rendering: pixelated;
+       }
+
+  /* Contenitore menu a tendina */
+  #menu-container {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    background: rgba(30,30,30,0.95);
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    z-index: 99;
+  }
+  
+  #changelog-container {
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    background: rgba(30,30,30,0.95);
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    z-index: 99;
+  }
+  
+  #cl-red {
+    color: #ff0626;
+  }
+  #cl-green {
+    color: #07ff06;
+  }
+  #cl-blue {
+    color: #0622ff;
+  }
+  #cl-orange {
+    color: #ff9206;
+  }
+
+  #menu-container.active {
+    display: flex;
+  }
+  
+  #changelog-container.active {
+    display: flex;
+  }
+
+  .menu-link:hover {
+    background: #222;
+    border-radius: 3px;
+  }
+
+  .menu-link img {
+    width: 24px;
+    height: 24px;
+  }
+  .text {
+    position: relative;
+    top: 40px;
+  }
+  
+  #layer {
+    width: 360px;
+    display: relative;
+  }
+    </style>
+  </head>
+  <body>
+  
+     <img id="menu-button" src="textures/menu.png" alt="Menu">
+     
+<div id="menu-container">
+  <a href="voidsweeper.html" class="menu-link">
+    <img src="images/voidsweeper_icon.png" alt="VoidSweeper">VoidSweeper
+  </a>
+  <a href="announcements.html" class="menu-link">
+    <img src="images/news.png" alt="announcements">Pagina: Announcements
+  </a>
+  <a href="skybox.html" class="menu-link">
+    <img src="images/adminspace2.png" alt="skybox3d">Pagina: Skybox 3D
+  </a>
+  <a href="adam.html" class="menu-link">
+    <img src="images/grejang_block.png" alt="adam">Pagina: Adam
+  </a>
+  <a href="en_void.html" class="menu-link">
+    <img src="images/1.png" alt="en_Void">Pagina: en_Void
+  </a>
+  <a href="Grejang.html" class="menu-link">
+    <img src="images/2.png" alt="Grejang">Pagina: Grejang
+  </a>
+  <a href="mi-alliance.html" class="menu-link">
+    <img src="images/3.png" alt="Mi Alliance">Pagina: Mi Alliance
+  </a>
+  <a href="tbotv.html" class="menu-link">
+    <img src="images/4.png" alt="TBOTV">Pagina: The Bottom Of The Void
+  </a>
+  <a href="skybase.html" class="menu-link">
+    <img src="images/5.png" alt="Skybase">Pagina: Terminali
+  </a>
+  <a href="old.html" class="menu-link">
+    <img src="images/6.png" alt="Old">Vecchi Archivi
+  </a>
+  <a href="void.html" class="menu-link">
+    <img src="images/7.png" alt="Void">Pagina: Void
+  </a>
+  <p>Void: Una pagina con sola musica di sottofondo</p>
+</div>
+
+<script>
+const menuButton = document.getElementById("menu-button");
+const menuContainer = document.getElementById("menu-container");
+
+
+menuButton.onclick = (e) => {
+    e.stopPropagation();
+    menuContainer.classList.toggle("active");
+};
+
+
+document.addEventListener("click", (e) => {
+    if (!menuContainer.contains(e.target) && e.target !== menuButton) {
+        menuContainer.classList.remove("active");
+    }
+});
+</script>
+        
+    <script>
+      const isMobile = window.innerWidth <= 768;
+      document.head.insertAdjacentHTML('beforeend', `<style>
+        ${isMobile ? `body { width: 360px; } .text { top: 0px; }` : `body { width: 900px; } .text { top: 0px; } .layer { display: none; width: 0px; }`}</style>`);
+    </script>
+    
+    <audio id="music" src="https://raw.githubusercontent.com/MakeradamMc/voidexp-resources/main/voidSoundtracks/the_destruction_of_mb_delta.ogg" autoplay loop></audio>
+    <img src="/images/grlayer.png" alt="VoidEXP" id="layer">
+    <div class="text">
+    <h1>The ultimate truth - VoidEXP</h1>
+
+    <i>"Didn't you know? it is pure coincidence you ended up here... or maybe you have questions and want answers... well, this site holds up the ultimate truth that talks in silence and builds in the void"</i>
+    
+    <p>Bentornati nel Void! Qua inzia io vostro viaggio attraverso codici segreti, verità nascoste e moltissime cose che richiedono un cervello da genio per capire :D</p>
+    
+    <p>Clicca il pulsante del menú in alto a destra e apri una delle pagine elencate per inizare</p>
+    
+    <img src="/images/grlayer.png" alt="VoidEXP">
+    <p>--------------------------</p>
+    <img src="/images/grejanglogofull.png" alt="Grejang Logo" width=250px>
+    <p>--------------------------</p>
+    <img src="/images/redlinelayer.png" alt="VoidEXP">
+    
+    <p>- Il team di SkyBase, ADMINSPACE, MB delta e DeltaQuest</p>
+    
+    <p> - Adam</p>
+    </div>
+  </body>
+</html>

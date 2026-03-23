@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte - en_Void</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/images/nowhere_2.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: white; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+      #compile {
+        background: rgba(20,20,20,0.8);
+        border: 2px solid #555;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 300px;
+        margin-bottom: 10px;
+      }
+      #decompile {
+        background: rgba(20,20,20,0.8);
+        border: 2px solid #555;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 300px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+  
+    <a href="index.html">torna alla home</a>
+    
+    <audio id="music" src="https://raw.githubusercontent.com/MakeradamMc/voidexp-resources/main/voidSoundtracks/simulation_rumbling.ogg" autoplay loop></audio>
+     
+    <h1>en_Void - Lunguaggio in codice</h1>
+    
+    <p>L'en_Void è un linguaggio in codice, con gli strumenti qua sotto puoi decompilare/compilare automaticamente una frase</p>
+    
+    <div id="compile">
+    <textarea id="input" placeholder="Scrivi qui"></textarea>
+
+    <button onclick="encode()">Compila</button>
+    </div>
+    
+    <div id="decompile">
+    <textarea id="output" placeholder="Risultato"></textarea>
+    
+    <button onclick="decode()">Decompila</button>
+    </div>
+    
+    <p>Volete una versione stampabile del codice? cliccate qua</p>
+    <a href="https://www.mediafire.com/file/6055adik8db21w2/en_void.png/file">en_Void.lang</a>
+
+    <script>
+    function encode() {
+      const input = document.getElementById("input").value;
+      document.getElementById("output").value = compileText(input);
+    }
+
+    function decode() {
+      const input = document.getElementById("output").value;
+      document.getElementById("input").value = decompileText(input);
+    }
+    </script>
+    
+    <script>
+
+    const encodeMap = {
+      "a": "⍂",
+      "b": "⌗",
+      "c": "⍀",
+      "d": "⍽",
+      "e": "⎖",
+      "f": "☒",
+      "g": "⚊",
+      "h": "❰",
+      "i": "▼",
+      "j": "←",
+      "k": "∶",
+      "l": "⌙",
+      "m": "⛛",
+      "n": "ᚾ",
+      "o": "ᛟ",
+      "p": "〇",
+      "q": "ᛩ",
+      "r": "ᚱ",
+      "s": "⑀",
+      "t": "ᛏ",
+      "u": "ᚢ",
+      "v": "⚐",
+      "w": "∑",
+      "x": "∐",
+      "y": "∏",
+      "z": "⌓",
+      "0": "⑨",
+      "1": "⑪",
+      "2": "⑦",
+      "3": "③",
+      "4": "②",
+      "5": "④",
+      "6": "①",
+      "7": "⑥",
+      "8": "⑤",
+      "9": "⑧",
+
+    };
+
+    const decodeMap = Object.fromEntries(
+      Object.entries(encodeMap).map(([k, v]) => [v, k])
+    );
+
+
+    function compileText(text) {
+      return [...text].map(char => {
+        if (char === " ") return " ";
+        return encodeMap[char.toLowerCase()] || char;
+      }).join("");
+    }
+
+    function decompileText(text) {
+      return [...text].map(char => {
+        if (char === " ") return " ";
+        return decodeMap[char] || char;
+      }).join("");
+    }
+    </script>
+    
+    <p>- Il team di SkyBase, ADMINSPACE, MB delta e DeltaQuest</p>
+    
+    <p> - Adam</p>
+  </body>
+</html>

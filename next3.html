@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of risposte</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background-image: url("/images/background.png"); /* o un link completo, tipo https://tuosito.neocities.org/sfondo.jpg */
+        background-size: cover; /* fa sì che l'immagine copra tutto lo schermo */
+        background-position: center; /* la centra */
+        background-attachment: fixed; /* fa restare ferma mentre scorri */
+        color: white; /* cambia il colore del testo se serve */
+        font-family: "Courier New", monospace; /* font misterioso opzionale */
+      }
+    </style>
+  </head>
+  <body>
+  
+    <a href="index.html">torna alla home</a>
+     
+    <h1>Fase 3:</h1>
+
+    <p>Iniziamo, metti la risposta del codice dell'altro giorno:</p>
+    
+    <input type="text" id="input" placeholder="Scrivi la tua risposta">
+  <button onclick="controlla()">Invia</button>
+
+  <p id="risultato"></p>
+
+  <script>
+    function controlla() {
+        const risposta = document.getElementById("input").value.trim();
+        const risultato = document.getElementById("risultato");
+        const rispostaCorretta = "NON SIAMO CIECHI MA IL CODICE MORSE LO RICONOSCIAMO";
+
+        console.log("Risposta inserita:", risposta);
+        console.log("Risposta corretta:", rispostaCorretta);
+        console.log("Uguali?", risposta === rispostaCorretta);
+
+        if (risposta === rispostaCorretta) {
+            risultato.textContent = "✅ Corretto.  ";
+            risultato.style.color = "lightgreen";
+        } else {
+            risultato.textContent = "❌ qualcosa qui non quadra...";
+            risultato.style.color = "red";
+        }
+    }
+  </script>
+
+<button onclick="mostraIndizio()">Mostra Indizio</button>
+
+<div id="indizio" style="display:none; margin-top:10px; background:#222; color:#eee; padding:10px; border-radius:5px;">
+   Linguaggio dei ciechi
+</div>
+
+<script>
+  function mostraIndizio() {
+    const indizio = document.getElementById('indizio');
+    if (indizio.style.display === 'none') {
+      indizio.style.display = 'block';
+    } else {
+      indizio.style.display = 'none';
+    }
+  }
+</script>
+
+</body>
+</html>
+    
+    <p>Sarete in grado di decifrare questo?</p>
+    
+    <p>---------------------------------------------------</p>
+    
+    <p>00110100 00110001 00100000 00110010 00110000 00100000 00110110 00110001 00100000 00110110 00110100 00100000 00110110 00110001 00100000 00110110 01100100 00100000 00110010 00110000 00100000 00110111 00110000 00100000 00110110 00111001 00100000 00110110 00110001 00100000 00110110 00110011 00100000 00110110 00110011 00100000 00110110 00111001 00100000 00110110 01100110 00100000 00110110 01100101 00100000 00110110 01100110 00100000 00110010 00110000 00100000 00110110 00111001 00100000 00110010 00110000 00100000 00110110 00110111 00100000 00110110 00110001 00100000 00110111 00110100 00100000 00110111 00110100 00100000 00110110 00111001</p>
+    
+    <p>---------------------------------------------------</p>
+    
+    <p>- Il team di SkyBase, ADMINSPACE, MB delta e DeltaQuest</p>
+    
+    <p> - Adam</p>
+  </body>
+</html>
