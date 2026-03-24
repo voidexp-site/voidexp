@@ -33,3 +33,23 @@ body {
   font-weight: bold;
   font-style: italic;
 }
+
+
+a {
+  color: #6100ff;
+}
+
+
+a:visited {
+  color: #00ff35;
+}
+
+
+a:hover {
+  color: #7800ff;
+}
+
+
+a:active {
+  color: #ff0000;
+}
