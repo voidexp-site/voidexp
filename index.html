@@ -8,8 +8,8 @@
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
-    <link href="style.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="icon" href="favicon.ico">
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="/favicon.ico">
     <style>
       body {
         background-image: url("images/tvb.png"); 
@@ -17,7 +17,7 @@
         background-position: center; 
         background-attachment: fixed; 
         color: white;
-        font-family: "Void", monospace; 
+        font-family: "VoidFont", monospace; /
       }
        #menu-button {
        position: fixed;
@@ -110,13 +110,7 @@
   #red {
 	color: #ff3e3e;
   }
-  
-  .notice {
-	background: rgba(20,20,20,0.8);
-    border: 2px solid #555;
-    border-radius: 6px;
-  }
-    <style>
+    </style>
   </head>
   <body>
   
@@ -180,7 +174,7 @@ document.addEventListener("click", (e) => {
     <script>
       const isMobile = window.innerWidth <= 768;
       document.head.insertAdjacentHTML('beforeend', `<style>
-        ${isMobile ? `body { width: 360px; } .text { top: 0px; }` : `body { width: 900px; } .text { top: 0px; } .layer { display: none; width: 0px; }`}<style>`);
+        ${isMobile ? `body { width: 360px; } .text { top: 0px; }` : `body { width: 900px; } .text { top: 0px; } .layer { display: none; width: 0px; }`}</style>`);
     </script>
     
     <audio id="music" src="https://raw.githubusercontent.com/voidexp-site/voidexp/main/soundtracks/the_destruction_of_mb_delta.ogg" autoplay loop></audio>
@@ -188,7 +182,7 @@ document.addEventListener("click", (e) => {
     <div class="text">
     <h1>The ultimate truth - VoidEXP</h1>
 	
-	<div class="notice"><p><b id="red">NOVITA!</b> il sito ora è hostato su GitHub, grazie a cio non ho piu limitazioni e il sito sarà sempre migliore!</p></div>
+	<p><b id="red">NOVITA!</b> il sito ora è hostato su GitHub, grazie a cio non ho piu limitazioni e il sito sarà sempre migliore!</p>
 
     <i>"Didn't you know? it is pure coincidence you ended up here... or maybe you have questions and want answers... well, this site holds up the ultimate truth that talks in silence and builds in the void"</i>
     
